@@ -1,4 +1,4 @@
-# WeatherApp
+# Task Manager App
 
 NodeJS application for managing tasks
 
