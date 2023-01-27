@@ -14,4 +14,8 @@ app.use((err, req, res, next) => {
     res.status(400).send({ error: err.message });
 });
 
+app.get("/live", (req, res) => {
+    res.send("Endpoint is alive!");
+});
+
 app.listen(port, () => console.log(`Server is listening on ${port}`));
