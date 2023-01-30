@@ -18,4 +18,10 @@ app.get("/live", (req, res) => {
     res.send("Endpoint is alive!");
 });
 
+app.get("/", (req, res) => {
+    res.send({
+        env: JSON.stringify(process.env),
+    });
+});
+
 app.listen(port, () => console.log(`Server is listening on ${port}`));
