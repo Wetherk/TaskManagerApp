@@ -13,6 +13,9 @@ NodeJS application for managing tasks
 Almost all requests are hidden behing auth, auth is made based on JWT token. Token is assign to user on login/user creation  
 There is a connection between users & tasks, user can only see tasks created by him. User can create tasks, manage his account and add avatar to his account. App sends welcome email on registration & account deletion (only for whitelisted emails) 
 
+`url` variable should be set to `https://task-manager-app-wetherk.vercel.app` in case testing on production and `http://localhost:3000` if testing locally
+also you need to setup `authToken` variable in postman envinroment, you can leave it empty, collection has scripts to fill it automatically on login/user creation
+Postman collection is located in the project source files
 
 Log in
 ```
@@ -140,4 +143,4 @@ GET {{url}}/tasks?sortBy=description_asc
 First you provide attribute to be sorted by with underscore at the end ex: `description_`, then `asc` or `desc` depending on the ordering you need
 
 # Application is hosted on [Vercel](https://vercel.com/)
-Link: [Task Manager App]()
+Link: [Task Manager App](https://task-manager-app-wetherk.vercel.app/)
