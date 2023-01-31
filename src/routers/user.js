@@ -123,17 +123,20 @@ router.post(
     auth,
     avatarUpload.single("avatar"),
     async (req, res) => {
-        const buffer = await sharp(req.file.buffer)
-            .png()
-            .resize({
-                width: 250,
-                height: 250,
-            })
-            .toBuffer();
-        req.user.avatar = buffer;
-
-        await req.user.save();
-        res.send();
+        try {
+            const buffer = await sharp(req.file.buffer)
+                .png()
+                .resize({
+                    width: 250,
+                    height: 250,
+                })
+                .toBuffer();
+            req.user.avatar = buffer;
+            await req.user.save();
+            res.send();
+        } catch (e) {
+            res.status(400).send();
+        }
     }
 );
 
